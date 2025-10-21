@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 100% 97%;
+    --foreground: 210 60% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 8%;
+
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 20% 50%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --safe: 142 76% 36%;
+    --safe-foreground: 0 0% 100%;
+
+    --moderate: 45 93% 47%;
+    --moderate-foreground: 0 0% 100%;
+
+    --unhealthy: 33 100% 50%;
+    --unhealthy-foreground: 0 0% 100%;
+
+    --hazardous: 348 83% 47%;
+    --hazardous-foreground: 0 0% 100%;
+
+    --border: 210 40% 90%;
+    --input: 210 40% 90%;
+    --ring: 158 64% 52%;
+
+    --radius: 0.75rem;
+
+    --gradient-sky: linear-gradient(135deg, hsl(195, 100%, 50%), hsl(158, 64%, 52%));
+    --gradient-earth: linear-gradient(135deg, hsl(142, 76%, 36%), hsl(158, 64%, 52%));
+    --gradient-water: linear-gradient(135deg, hsl(195, 100%, 50%), hsl(210, 100%, 40%));
+    --gradient-alert: linear-gradient(135deg, hsl(0, 84%, 60%), hsl(33, 100%, 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(195, 100%, 50%) 0%, hsl(158, 64%, 52%) 50%, hsl(142, 76%, 36%) 100%);
+    
+    --shadow-glow: 0 0 40px hsl(158 64% 52% / 0.3);
+    --shadow-card: 0 10px 40px -10px hsl(210 60% 8% / 0.1);
+    --shadow-elevated: 0 20px 60px -15px hsl(210 60% 8% / 0.2);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 60% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 50% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 50% 20%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 50% 20%;
+    --input: 210 50% 20%;
+    --ring: 158 64% 52%;
+
+    --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 20px 60px -15px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-card/80 backdrop-blur-lg border border-border/50;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .status-badge-safe {
+    @apply bg-safe/10 text-safe border-safe/20;
+  }
+
+  .status-badge-moderate {
+    @apply bg-moderate/10 text-moderate border-moderate/20;
+  }
+
+  .status-badge-unhealthy {
+    @apply bg-unhealthy/10 text-unhealthy border-unhealthy/20;
+  }
+
+  .status-badge-hazardous {
+    @apply bg-hazardous/10 text-hazardous border-hazardous/20;
+  }
+}
